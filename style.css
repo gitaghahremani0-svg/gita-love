@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Tahoma, sans-serif;
+    color: white;
+    background:
+        radial-gradient(ellipse at 15% 20%, #650b2d 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 80%, #3d0752 0%, transparent 45%),
+        linear-gradient(135deg, #050307, #1b0612, #09030f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    position: relative;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 45px 25px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255, 80, 150, 0.35);
+    border-radius: 28px;
+    background: rgba(18, 5, 17, 0.78);
+    box-shadow:
+        0 0 25px rgba(255, 0, 100, 0.15),
+        0 0 70px rgba(130, 0, 100, 0.18);
+    backdrop-filter: blur(12px);
+    animation: appear 1.3s ease both;
+}
+
+.heart-icon {
+    font-size: 75px;
+    color: #ff277f;
+    text-shadow:
+    0 0 10px #ff277f,
+        0 0 30px #ff0055,
+        0 0 60px #b000ff;
+    animation: heartbeat 1.5s infinite;
+}
+
+.small-title {
+    color: #ff9ac7;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    color: #ffd1e5;
+    text-shadow:
+        0 0 12px #ff168d,
+        0 0 35px #a000ff;
+    margin: 25px 0;
+    animation: glow 2s infinite alternate;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 2.3;
+    color: #f4dce8;
+    margin: 25px auto;
+}
+
+button {
+    margin-top: 20px;
+    padding: 17px 30px;
+    border: 1px solid #ff9bd4;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff176f, #8000c8);
+    color: white;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        0 0 18px #ff168d,
+        0 0 40px rgba(130, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow:
+        0 0 30px #ff168d,
+        0 0 65px #a000ff;
+}
+
+.signature {
+    margin-top: 35px;
+    color: #ff9ac7;
+    font-size: 14px;
+}
+
+.hearts-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    color: #ff277f;
+    opacity: 0;
+    text-shadow: 0 0 12px #ff168d;
+    animation: floatUp linear forwards;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.13);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff168d;
+    }
+    to {
+        text-shadow: 0 0 20px #ff168d, 0 0 45px #a000ff;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.8;
+    }
+    85% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+[hidden] {
+    display: none !important;
+}
+
+.secret-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 460px;
+}
+
+.secret-button {
+    width: 100%;
+    margin: 0;
+    padding: 20px 18px;
+    text-align: right;
+    border: 1px solid rgba(255, 90, 160, 0.5);
+    border-radius: 18px;
+    background: linear-gradient(
+        120deg,
+        rgba(80, 8, 38, 0.85),
+        rgba(35, 8, 48, 0.9)
+    );
+    box-shadow: 0 0 15px rgba(255, 20, 120, 0.12);
+    line-height: 1.8;
+    transition: all 0.35s ease;
+}
+
+.secret-button:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #ff70b5;
+    box-shadow:
+        0 0 18px rgba(255, 20, 120, 0.4),
+        0 0 35px rgba(150, 0, 255, 0.2);
+}
+
+.secret-button.opened {
+    border-color: #ffb1d8;
+    background: linear-gradient(
+        120deg,
+        rgba(110, 12, 55, 0.95),
+        rgba(65, 10, 75, 0.95)
+    );
+    box-shadow: 0 0 20px rgba(255, 50, 150, 0.3);
+}
+
+#secretMessage {
+    padding: 20px;
+    border-right: 3px solid #ff4c9b;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    animation: appear 0.6s ease;
+}
+
+#nextButton {
+    animation: glow 1.5s infinite alternate;
+}
+
+#nextButton:disabled {
+    opacity: 0.65;
+    cursor: default;
+    animation: none;
+}
+
+@media (max-width: 480px) {
+    .welcome-card {
+        padding: 30px 18px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .secret-button {
+        font-size: 15px;
+    }
+}
+.love-section {
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 35px 22px;
+    text-align: center;
+    border: 1px solid rgba(255, 80, 150, 0.5);
+    border-radius: 25px;
+    background: linear-gradient(145deg, #300018, #17051f);
+    box-shadow: 0 0 35px rgba(255, 0, 100, 0.2);
+    overflow: hidden;
+}
+
+.love-glow {
+    font-size: 65px;
+    animation: heartbeat 1s infinite;
+}
+
+.love-text {
+    line-height: 2.2;
+    color: #ffd5e8;
+}
+
+#loveButton {
+    background: linear-gradient(120deg, #ff176f, #a600ff);
+    box-shadow: 0 0 25px rgba(255, 30, 130, 0.5);
+}
+
+.love-burst-heart {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 28px;
+    animation: loveBurst 2.5s ease-out forwards;
+}
+
+@keyframes loveBurst {
+    0% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--drift), -100vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* شمارش لحظه‌های عشق من و ناناجونم */
+#loveCounter {
+    margin: 35px auto;
+    padding: 25px 15px;
+    max-width: 650px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(145deg, #100609, #350b1c, #16060d);
+    border: 1px solid #a52a52;
+    border-radius: 22px;
+    box-shadow: 0 0 20px #8b123f80, inset 0 0 20px #8b123f30;
+}
+
+#loveCounter h2 {
+    color: #ff8fb5;
+    text-shadow: 0 0 12px #ff174f;
+    font-size: 23px;
+}
+
+#loveCounter p {
+    color: #f5c4d4;
+    margin-bottom: 22px;
+}
+
+.counter-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.counter-box div {
+    min-width: 90px;
+    padding: 15px 10px;
+    background: #210813;
+    border: 1px solid #c02c61;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #e91e6340;
+}
+
+.counter-box span {
+    display: block;
+    color: #ff5b94;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff174f;
+}
+
+.counter-box small {
+    display: block;
+    margin-top: 7px;
+    color: #fff;
+    font-size: 14px;
+}
+
+#loveCounterSection[hidden] {
+    display: none !important;
+}
+
+#loveCounterSection:not([hidden]) {
+    display: block !important;
+}

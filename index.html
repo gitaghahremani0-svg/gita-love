@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راز من و نانااا ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hearts-background" id="heartsBackground"></div>
+
+<audio id="backgroundMusic" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+    <main class="welcome-card" id="welcomePage">
+        <div class="heart-icon">♥</div>
+
+        <p class="small-title">یه راز فقط برای تو...</p>
+        <h1>نانااا، اینجایی؟</h1>
+
+        <p class="description">
+            یه چیزی هست که مدت‌هاست دلم می‌خواد بهت بگم...
+            <br>
+            ولی قبلش باید چندتا راز رو کشف کنی. 💌
+        </p>
+    
+
+        <button id="startButton">ورود به دنیای ما ❤️</button>
+
+        <p class="signature">با عشق، من</p>
+    </main>
+    <main class="welcome-card" id="secretPage" hidden>
+        <p class="small-title">مرحله اول از دنیای ما</p>
+        <h1>سه راز برای تو... 🖤</h1>
+
+        <p class="description">
+            هر کدوم از این رازها یه تکه از حرف‌های نگفته‌ی منه.
+            <br>
+            روی هر کدوم بزن تا داستانش رو بفهمی.
+        </p>
+
+        <div class="secret-list">
+            <button class="secret-button" data-secret="1">
+                🥀 راز اول؛ حرفی که نگفتم
+            </button>
+
+            <button class="secret-button" data-secret="2">
+                💌 راز دوم؛ وقتی دلتنگ می‌شم
+            </button>
+
+            <button class="secret-button" data-secret="3">
+                🔒 راز سوم؛ چیزی که هنوز نمی‌دونی
+            </button>
+        </div>
+
+        <p id="secretMessage" class="description" aria-live="polite">
+            یکی رو انتخاب کن...
+        </p>
+
+        <button id="nextButton" hidden>
+            ادامه‌ی داستان ما ❤️
+        </button>
+<div class="secret-letter">
+    <div class="envelope-icon">💌</div>
+
+    <h2>نانااا، این نامه رو با دل بخون...</h2>
+
+    <p>یه چیزایی هست که گفتنشون رو بهت بدهکارم.</p>
+
+    <button id="letterButton">نامه‌ای که برای توئه ❤️</button>
+
+    <div id="letterContent" hidden>
+        <p>
+            ناناااِ من... ❤️
+            <br><br>
+            کاش می‌تونستم همین الان تمام حرفایی رو که توی دلمه
+            بدون اینکه حتی یه کلمه جا بمونه بهت بگم.
+            <br><br>
+            نمی‌دونی چقدر برام قشنگه که توی این دنیای شلوغ،
+            یه نفر هست که فکر کردن بهش حالم رو عوض می‌کنه.
+            کسی که دلم می‌خواد از روزم براش بگم،
+            باهاش بخندم، از ناراحتیم حرف بزنم
+            و حتی از چیزای کوچیکی بگم که شاید برای بقیه مهم نباشن.
+            <br><br>
+            بعضی وقتا دلم برات تنگ می‌شه،
+            حتی وقتی حرف خاصی برای گفتن ندارم.
+            فقط دلم می‌خواد باشی، حرف بزنیم
+            و بدونم یه گوشه از این دنیای بزرگ، تو رو دارم.
+            <br><br>
+            شاید همیشه نتونم احساسم رو اون‌جوری که باید نشون بدم،
+            شاید بعضی حرفا رو نگه دارم و بعضی وقتا نتونم
+            به اندازه‌ی دلم بهت بگم چقدر برام عزیزی...
+            ولی این به معنی کم بودن احساسم نیست.
+            <br><br>
+            نانااا، من از قشنگیِ باهم بودنمون حرف می‌زنم،
+            از خاطره‌هایی که ساختیم و اونایی که هنوز نساختیم.
+            دلم می‌خواد روزی که به گذشته نگاه می‌کنیم،
+            کلی دلیل برای لبخند زدن داشته باشیم.
+            <br><br>
+            این نامه تموم می‌شه، ولی حرفای من نه...
+            چون هنوز یه چیزی مونده که باید خودت کشفش کنی.
+            <br><br>
+            با تمام حرفایی که گاهی نمی‌تونم بگم،
+            <br>
+            من ❤️‍🩹
+        </p>
+    </div>
+</div>
+
+        <p class="signature">این داستان هنوز تموم نشده...</p>
+    </main>
+<main class="welcome-card" id="questionPage" hidden>
+    <button id="backToSecrets">برگشت به رازها ↩️</button>
+    <div class="heart-icon">♥</div>
+
+    <p class="small-title">مرحله‌ی دوم؛ فقط برای ما</p>
+
+    <h1>نانااا، یه سؤال ازت دارم... 🥀</h1>
+
+    <p class="description">
+        قبل از اینکه به راز آخر برسیم،
+        بیا چندتا سؤال رو باهم مرور کنیم.
+        <br>
+        هر جوابی که انتخاب کنی، داستان ادامه پیدا می‌کنه... ❤️
+    </p>
+
+    <div class="secret-list">
+        <button class="secret-button question-button" data-answer="1">
+            💌 اگه بخوای یه خاطره از ما رو برای همیشه نگه داری، کدوم لحظه رو انتخاب می‌کنی؟
+        </button>
+
+        <button class="secret-button question-button" data-answer="2">
+            🌙 وقتی دلتنگم می‌شی، اولین چیزی که یادت میاد چیه؟
+        </button>
+
+        <button class="secret-button question-button" data-answer="3">
+            ❤️ دوست داری در آینده چه خاطره‌ای رو باهم بسازیم؟
+        </button>
+    </div>
+
+    <p id="answerMessage" class="description" aria-live="polite">
+        یکی رو انتخاب کن، نانااا...
+    </p>
+
+      <button id="surpriseButton" hidden>
+        باز کردن سورپرایز آخر 💖
+    </button>
+
+    <button id="lovePageButton" hidden>
+        یه حرف دیگه برای نانااا ❤️
+    </button>
+
+    <p class="signature">هنوز یه حرف مونده... از طرف من ❤️</p>
+</main>
+<section class="love-section" id="lovePage"hidden>
+    <div class="love-glow">💗</div>
+
+    <p class="small-title">یه عالمه حرف قشنگ برای تو...</p>
+
+    <h1>ناناجونممم! 🥹❤️</h1>
+
+    <p class="love-text">
+        دوست دارم ناناجونم! 💋
+        <br><br>
+        قربون اون دل مهربونت برم من!
+        <br>
+        فدات بشم که این‌قدر برام عزیزی! 🫶🏻
+        <br>
+        الهی من قربون خنده‌هات برم!
+        <br>
+        نانااا، تو یه دونه‌ای واسه گیتا! 💞
+        <br><br>
+        یه بغل بزرگ از راه دور برای تووو! 🫂❤️
+    </p>
+
+    <button id="loveButton">عاشقتم ناناجونم! 💋</button>
+<button id="backButton">برگشت به صفحه‌ی قبل ↩️</button>
+    <p id="loveMessage" class="love-text">
+        روی دکمه بزن تا یه چیزی ببینی... 💌
+    </p>
+</section>
+
+
+<!-- شمارش لحظه‌های عشق ما -->
+<div id="loveCounterSection" hidden>
+    <div id="loveCounter">
+        <h2>❤️ قصه‌ی عشق من و ناناجونم ❤️</h2>
+        <p>از اون روز تا همین لحظه...</p>
+
+        <div class="counter-box">
+            <div><span id="loveDays">0</span><small>روز</small></div>
+            <div><span id="loveHours">0</span><small>ساعت</small></div>
+            <div><span id="loveMinutes">0</span><small>دقیقه</small></div>
+            <div><span id="loveSeconds">0</span><small>ثانیه</small></div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
